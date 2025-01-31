@@ -1,0 +1,22 @@
+.main_container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 4rem;
+    font-size: 3rem;
+}
+
+.btn_container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
