@@ -10,7 +10,7 @@ export default function Home() {
                     <div>
                         <h1 className={styles.header}>Title of App</h1>
                         <div className={styles.btn_container}>
-                            <Link href="#">
+                            <Link href="/login">
                                 <button>Login</button>
                             </Link>
                             <Link href="#">

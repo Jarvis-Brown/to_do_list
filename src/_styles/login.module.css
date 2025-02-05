@@ -1,0 +1,22 @@
+.main_container {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+}
+
+.textbox {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.passwordHint {
+    padding-top: 10px;
+    text-align: right;
+}
