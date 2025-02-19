@@ -1,13 +1,26 @@
+// TEMPLATE PAGE //
+
 import React from "react";
 import styles from "@/_styles/home.layout.module.css";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import Link from "next/link";
 
 interface homeLayoutModel {
     children: React.ReactNode;
+    is_backButton: boolean;
 }
 
-export const HomeLayout: React.FC<homeLayoutModel> = ({ children }) => {
+export const HomeLayout: React.FC<homeLayoutModel> = ({
+    children,
+    is_backButton,
+}) => {
     return (
         <main className={styles.main}>
+            {is_backButton && (
+                <Link href="/" className={styles.back_arrow}>
+                    <KeyboardBackspaceIcon />
+                </Link>
+            )}
             <div className={styles.main_container}>
                 <div>
                     <div>

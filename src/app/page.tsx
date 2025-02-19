@@ -1,4 +1,7 @@
 //import Image from "next/image";
+
+// HOME PAGE //
+
 import Link from "next/link";
 import styles from "@/_styles/home.module.css";
 import { HomeLayout } from "@/_component";
@@ -6,7 +9,7 @@ import { HomeLayout } from "@/_component";
 export default function Home() {
     return (
         <>
-            <HomeLayout>
+            <HomeLayout is_backButton={false}>
                 <div className={styles.btn_container}>
                     <Link href="/login">
                         <button>Login</button>
