@@ -1,4 +1,4 @@
-// LOGIN PAGE //
+// CREATE ACCOUNT //
 
 import React from "react";
 import TextField from "@mui/material/TextField";
@@ -10,8 +10,24 @@ const Login = () => {
         <HomeLayout is_backButton={true}>
             <div className={styles.textbox}>
                 <div>
+                    <TextField id="filled-basic" label="First Name" fullWidth />
+                </div>
+                <div>
+                    <TextField id="filled-basic" label="Last Name" fullWidth />
+                </div>
+                <div>
+                    <TextField
+                        id="filled-basic"
+                        label="Email Address"
+                        type="email"
+                        fullWidth
+                    />
+                </div>
+
+                <div>
                     <TextField id="filled-basic" label="Username" fullWidth />
                 </div>
+
                 <div>
                     <TextField
                         id="filled-basic"
@@ -19,10 +35,9 @@ const Login = () => {
                         type="password"
                         fullWidth
                     />
-                    <div className={styles.passwordHint}>Forgot Password?</div>
                 </div>
 
-                <button className={styles.btn}>Login</button>
+                <button className={styles.btn}>Create Account</button>
             </div>
         </HomeLayout>
     );
