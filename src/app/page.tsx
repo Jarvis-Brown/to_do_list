@@ -1,6 +1,6 @@
 //import Image from "next/image";
 
-// HOME PAGE //
+//LOGIN and ACCOUNT PAGE //
 
 import Link from "next/link";
 import styles from "@/_styles/home.module.css";

@@ -4,6 +4,7 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { HomeLayout } from "@/_component";
+import Link from "next/link";
 
 const Login = () => {
     return (
@@ -22,7 +23,9 @@ const Login = () => {
                     <div className={styles.passwordHint}>Forgot Password?</div>
                 </div>
 
-                <button className={styles.btn}>Login</button>
+                <Link href="/home_page">
+                    <button className={styles.btn}>Login</button>
+                </Link>
             </div>
         </HomeLayout>
     );

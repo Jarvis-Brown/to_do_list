@@ -1,1 +1,3 @@
-export * from "./home.layout";
+// INDEX //
+
+export * from "./login.layout";
