@@ -10,8 +10,6 @@ import {
 
 import React from "react";
 
-const home_layout = () => {
+export const HomeLayout = () => {
     return <div>home_layout</div>;
 };
-
-export default home_layout;

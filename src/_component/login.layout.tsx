@@ -1,7 +1,7 @@
 // TEMPLATE PAGE //
 
 import React from "react";
-import styles from "@/_styles/home.layout.module.css";
+import styles from "@/_styles/login_layout.module.css";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ interface homeLayoutModel {
     is_backButton: boolean;
 }
 
-export const HomeLayout: React.FC<homeLayoutModel> = ({
+export const LoginLayout: React.FC<homeLayoutModel> = ({
     children,
     is_backButton,
 }) => {

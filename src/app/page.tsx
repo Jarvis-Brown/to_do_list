@@ -3,7 +3,7 @@
 //LOGIN and ACCOUNT PAGE //
 
 import Link from "next/link";
-import styles from "@/_styles/home.module.css";
+import styles from "@/_styles/login_account.module.css";
 import { HomeLayout } from "@/_component";
 
 export default function Home() {
