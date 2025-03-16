@@ -8,8 +8,20 @@ import {
     Close,
 } from "@mui/icons-material";
 
+import styles from "@/_styles/home_layout.module.css";
+
 import React from "react";
 
 export const HomeLayout = () => {
-    return <div>home_layout</div>;
+    return (
+        <>
+            <aside>
+                <div className={styles.profile_pic}></div>
+                <div>User Name</div>
+                <form>
+                    <input type="search" name=""></input>
+                </form>
+            </aside>
+        </>
+    );
 };
