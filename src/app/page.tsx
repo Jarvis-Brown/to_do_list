@@ -4,12 +4,18 @@
 
 import Link from "next/link";
 import styles from "@/_styles/login_account.module.css";
-import { HomeLayout } from "@/_component";
+// We would need the HomeLayout for the forgotten the component we forgot to change
+import { LoginLayout } from "@/_component";
+// Solution
+// import { HomeLayout } from "@/_component";
 
 export default function Home() {
     return (
         <>
-            <HomeLayout is_backButton={false}>
+            {/* We forgot to change component to the login layout */}
+            <LoginLayout is_backButton={false}>
+            {/* Solution */}
+            {/* <HomeLayout is_backButton={false}> */}
                 <div className={styles.btn_container}>
                     <Link href="/login">
                         <button>Login</button>
@@ -18,7 +24,8 @@ export default function Home() {
                         <button>Create Account</button>
                     </Link>
                 </div>
-            </HomeLayout>
+            </LoginLayout>
+            {/* </HomeLayout> */}
         </>
     );
 }

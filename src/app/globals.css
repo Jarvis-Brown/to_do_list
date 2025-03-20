@@ -37,8 +37,14 @@ button {
     padding: 1rem 1.5rem;
     background-color: aquamarine;
     border-radius: 0.5rem;
+    /* This was causing the width issue in input button dropdown */
     width: 10rem;
 }
+
+/* Solution */
+/* & .MuiAutocomplete-endAdornment button{
+    width: auto;
+} */
 
 h1 {
     text-align: center;
