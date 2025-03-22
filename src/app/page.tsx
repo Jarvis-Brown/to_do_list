@@ -14,8 +14,6 @@ export default function Home() {
         <>
             {/* We forgot to change component to the login layout */}
             <LoginLayout is_backButton={false}>
-            {/* Solution */}
-            {/* <HomeLayout is_backButton={false}> */}
                 <div className={styles.btn_container}>
                     <Link href="/login">
                         <button>Login</button>
@@ -25,7 +23,6 @@ export default function Home() {
                     </Link>
                 </div>
             </LoginLayout>
-            {/* </HomeLayout> */}
         </>
     );
 }
