@@ -1,3 +1,5 @@
+/* side area */
+
 .aside_main {
     display: grid;
     grid-template-columns: 1fr 4fr;
@@ -5,6 +7,9 @@
 
 .aside {
     padding: 25px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile_pic {
@@ -38,4 +43,23 @@
 .list_item {
     display: grid;
     grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: center;
 }
+
+.switch {
+    margin-top: auto;
+}
+
+.list_icon {
+    width: 24px;
+}
+
+.current_circle {
+    border-radius: 50%;
+    border: 2px solid black;
+    width: 20px;
+    aspect-ratio: 1;
+}
+
+/* Main area */

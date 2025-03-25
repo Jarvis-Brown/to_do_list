@@ -12,6 +12,8 @@ import { Search } from "./search";
 
 import styles from "@/_styles/home_layout.module.css";
 
+import Switch from "@mui/material/Switch";
+
 import React from "react";
 
 export const HomeLayout = () => {
@@ -24,18 +26,29 @@ export const HomeLayout = () => {
                 <div className={styles.divider}></div>
                 <div className={styles.list}>
                     <div className={styles.list_item}>
-                        <div className={styles.list_icon}></div>
+                        <div className={styles.list_icon}>
+                            <div className={styles.current_circle}></div>
+                        </div>
+
                         <div>Current List</div>
                         <div>0</div>
                     </div>
                     <div className={styles.list_item}>
-                        <div className={styles.list_icon}></div>
+                        <div className={styles.list_icon}>
+                            <Done />
+                        </div>
                         <div>Completed List</div>
                         <div>0</div>
                     </div>
                     <div className={styles.divider}></div>
                 </div>
+                <div className={styles.switch}>
+                    <Switch defaultChecked />
+                </div>
             </aside>
+            <main className={styles.main}>
+                <Settings sx={{ fontSize: 35 }} />
+            </main>
         </div>
     );
 };
