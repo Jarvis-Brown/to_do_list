@@ -4,13 +4,16 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #171717;
+    --font: #181d1f;
+    --aside: #a1bbc4;
+    --accent: #4d6e78;
+    --list: #bfd8df;
+    --button: #8ed1dc;
 }
 
 /* @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+
     }
 } */
 
@@ -27,7 +30,7 @@ html {
 }
 
 body {
-    color: var(--foreground);
+    color: var(--font);
     background: var(--background);
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
@@ -35,7 +38,7 @@ body {
 
 button {
     padding: 1rem 1.5rem;
-    background-color: aquamarine;
+    background-color: var(--button);
     border-radius: 0.5rem;
     /* This was causing the width issue in input button dropdown */
     width: 10rem;

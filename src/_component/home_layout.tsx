@@ -47,7 +47,20 @@ export const HomeLayout = () => {
                 </div>
             </aside>
             <main className={styles.main}>
-                <Settings sx={{ fontSize: 35 }} />
+                <div className={styles.setting_container}>
+                    <Settings sx={{ fontSize: 35 }} />
+                </div>
+                <div className={styles.calendar_container}>
+                    <div>Wednesday</div>
+
+                    <div className={styles.date_container}>
+                        <p>February 19, 1988 </p>
+                        <CalendarToday />
+                    </div>
+                </div>
+                <div className={styles.create_list}>
+                    <button>List</button>
+                </div>
             </main>
         </div>
     );

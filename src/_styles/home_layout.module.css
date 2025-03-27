@@ -10,11 +10,12 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--aside);
 }
 
 .profile_pic {
     border-radius: 50%;
-    background-color: black;
+    background-color: var(--background);
     height: 100px;
     width: 100px;
 }
@@ -32,7 +33,7 @@
 
 .divider {
     height: 1px;
-    background-color: black;
+    background-color: var(--font);
     margin: 35px 0;
 }
 
@@ -57,9 +58,34 @@
 
 .current_circle {
     border-radius: 50%;
-    border: 2px solid black;
+    border: 2px solid var(--background);
     width: 20px;
     aspect-ratio: 1;
 }
 
 /* Main area */
+
+.main {
+    padding: 25px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.setting_container {
+    text-align: right;
+}
+
+.calendar_container {
+    padding-top: 65px;
+}
+
+.date_container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.create_list {
+    margin: auto auto 60px auto;
+}
