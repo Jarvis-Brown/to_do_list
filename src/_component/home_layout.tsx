@@ -58,8 +58,9 @@ export const HomeLayout = () => {
                         <CalendarToday />
                     </div>
                 </div>
+
                 <div className={styles.create_list}>
-                    <button>List</button>
+                    <button>Create List</button>
                 </div>
             </main>
         </div>

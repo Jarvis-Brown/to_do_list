@@ -13,20 +13,25 @@ export const Search = () => {
     const list = ["STL", "DET"];
     return (
         <div className={styles.group}>
-            <Autocomplete
-                disablePortal
-                options={list}
-                renderInput={(params) => (
-                    <TextField {...params} label="search" />
-                )}
-            />
-            <Autocomplete
-                disablePortal
-                options={[]}
-                renderInput={(params) => (
-                    <TextField {...params} label="filter" />
-                )}
-            />
+            <div className={styles.autocomplete_wrapper}>
+                <Autocomplete
+                    disablePortal
+                    options={list}
+                    renderInput={(params) => (
+                        <TextField {...params} label="search" />
+                    )}
+                />
+            </div>
+
+            <div className={styles.autocomplete_wrapper}>
+                <Autocomplete
+                    disablePortal
+                    options={[]}
+                    renderInput={(params) => (
+                        <TextField {...params} label="filter" />
+                    )}
+                />
+            </div>
         </div>
     );
 };
