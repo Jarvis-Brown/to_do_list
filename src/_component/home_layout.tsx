@@ -1,18 +1,14 @@
 // HOME LAYOUT //
 
-import {
-    Star,
-    Done,
-    Settings,
-    CalendarToday,
-    Close,
-} from "@mui/icons-material";
+import { Star, Done, Settings, CalendarToday } from "@mui/icons-material";
 
 import { Search } from "./search";
 
 import styles from "@/_styles/home_layout.module.css";
 
 import Switch from "@mui/material/Switch";
+
+import { SettingDrawer } from "./SettingDrawer";
 
 import React from "react";
 
@@ -47,9 +43,7 @@ export const HomeLayout = () => {
                 </div>
             </aside>
             <main className={styles.main}>
-                <div className={styles.setting_container}>
-                    <Settings sx={{ fontSize: 35 }} />
-                </div>
+                <SettingDrawer />
                 <div className={styles.calendar_container}>
                     <div>Wednesday</div>
 

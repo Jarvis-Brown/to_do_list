@@ -95,3 +95,14 @@
 .create_list {
     margin: auto auto 60px auto;
 }
+
+/* settings Drawer */
+
+.drawer_wrapper {
+    width: 350px;
+}
+
+.close_icon {
+    text-align: right;
+    padding: 25px 25px 0 0;
+}
