@@ -12,7 +12,11 @@ import { SettingDrawer } from "./SettingDrawer";
 
 import React from "react";
 
-export const HomeLayout = () => {
+interface homeLayoutModel {
+    children: React.ReactNode;
+}
+
+export const HomeLayout: React.FC<homeLayoutModel> = ({ children }) => {
     return (
         <div className={styles.aside_main}>
             <aside className={styles.aside}>
@@ -53,9 +57,11 @@ export const HomeLayout = () => {
                     </div>
                 </div>
 
-                <div className={styles.create_list}>
+                <div>{children}</div>
+
+                {/* <div className={styles.create_list}>
                     <button>Create List</button>
-                </div>
+                </div> */}
             </main>
         </div>
     );

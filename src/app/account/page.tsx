@@ -3,12 +3,12 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
-import { HomeLayout } from "@/_component";
+import { LoginLayout } from "@/_component";
 import Link from "next/link";
 
 const Login = () => {
     return (
-        <HomeLayout is_backButton={true}>
+        <LoginLayout is_backButton={true}>
             <div className={styles.textbox}>
                 <div>
                     <TextField id="filled-basic" label="First Name" fullWidth />
@@ -42,7 +42,7 @@ const Login = () => {
                     <button className={styles.btn}>Create Account</button>
                 </Link>
             </div>
-        </HomeLayout>
+        </LoginLayout>
     );
 };
 

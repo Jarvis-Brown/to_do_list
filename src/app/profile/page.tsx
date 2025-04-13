@@ -1,15 +1,13 @@
-// HOME PAGE //
+// Profile Page
 
 import React from "react";
 import { HomeLayout } from "@/_component";
-import styles from "@/_styles/login.module.css";
+import Link from "next/link";
 
 const page = () => {
     return (
         <HomeLayout>
-            <div className={styles.create_list}>
-                <button>Create List</button>
-            </div>
+            <div>hello</div>
         </HomeLayout>
     );
 };
