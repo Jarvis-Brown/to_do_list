@@ -57,7 +57,7 @@ export const HomeLayout: React.FC<homeLayoutModel> = ({ children }) => {
                     </div>
                 </div>
 
-                <div>{children}</div>
+                {children}
 
                 {/* <div className={styles.create_list}>
                     <button>Create List</button>

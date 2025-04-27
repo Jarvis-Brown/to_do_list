@@ -96,6 +96,8 @@
 
 .create_list {
     margin: auto auto 60px auto;
+    display: flex;
+    justify-content: center;
 }
 
 /* settings Drawer */

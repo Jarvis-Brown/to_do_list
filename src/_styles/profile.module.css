@@ -1,0 +1,17 @@
+/* Main Area */
+
+.profile_pic {
+    border-radius: 50%;
+    width: 446px;
+    aspect-ratio: 1;
+    background-color: var(--font);
+    display: flex;
+    justify-content: center;
+    margin: 53px auto 90px;
+}
+
+.btn_container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
