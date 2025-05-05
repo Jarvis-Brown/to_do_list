@@ -24,7 +24,7 @@ export const LoginLayout: React.FC<homeLayoutModel> = ({
             <div className={styles.main_container}>
                 <div>
                     <div>
-                        <h1>Title of App</h1>
+                        <h1>Taskly</h1>
                     </div>
                     <div>{children}</div>
                 </div>

@@ -23,6 +23,48 @@
     margin: 0;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto/ROBOTO-REGULAR.TTF") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto/ROBOTO-BOLD.TTF") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/roboto/ROBOTO-LIGHT.TTF") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/nunito/NUNITO-REGULAR.TTF") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/nunito/NUNITO-BOLD.TTF") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/nunito/NUNITO-LIGHT.TTF") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
 html {
     scroll-behavior: smooth;
     /* color-scheme: light dark; */
@@ -32,7 +74,7 @@ html {
 body {
     color: var(--font);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", "Nunito", Arial, Helvetica, sans-serif;
     height: 100vh;
 }
 
@@ -43,6 +85,8 @@ button {
     /* This was causing the width issue in input button dropdown */
     width: 10rem;
     box-shadow: 0px 6px 9px 1px rgba(51, 51, 51, 0.5);
+    font-family: "Nunito";
+    font-weight: 700;
 }
 
 input {
@@ -60,4 +104,6 @@ h1 {
     font-weight: bold;
     padding-bottom: 4rem;
     font-size: 3rem;
+    font-family: "Nunito";
+    font-weight: 700;
 }
