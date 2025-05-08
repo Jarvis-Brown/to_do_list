@@ -1,46 +1,87 @@
 // CREATE ACCOUNT //
 
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { LoginLayout } from "@/_component";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+    const router = useRouter();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+
+    function test() {
+        console.log(firstName, lastName, email, userName, password);
+        router.push("/");
+    }
+
     return (
         <LoginLayout is_backButton={true}>
             <div className={styles.textbox}>
                 <div>
-                    <TextField id="filled-basic" label="First Name" fullWidth />
-                </div>
-                <div>
-                    <TextField id="filled-basic" label="Last Name" fullWidth />
+                    <TextField
+                        onChange={(e) => setFirstName(e.target.value)}
+                        value={firstName}
+                        id="filled-basic"
+                        label="First Name"
+                        fullWidth
+                        required
+                    />
                 </div>
                 <div>
                     <TextField
+                        onChange={(e) => setLastName(e.target.value)}
+                        value={lastName}
+                        id="filled-basic"
+                        label="Last Name"
+                        fullWidth
+                        required
+                    />
+                </div>
+                <div>
+                    <TextField
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
                         id="filled-basic"
                         label="Email Address"
                         type="email"
                         fullWidth
+                        required
                     />
-                </div>
-
-                <div>
-                    <TextField id="filled-basic" label="Username" fullWidth />
                 </div>
 
                 <div>
                     <TextField
+                        onChange={(e) => setUserName(e.target.value)}
+                        value={userName}
+                        id="filled-basic"
+                        label="Username"
+                        fullWidth
+                        required
+                    />
+                </div>
+
+                <div>
+                    <TextField
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
                         id="filled-basic"
                         label="Password"
                         type="password"
                         fullWidth
+                        required
                     />
                 </div>
 
-                <Link href="/home_page">
-                    <button className={styles.btn}>Create Account</button>
-                </Link>
+                <button onClick={test} className={styles.btn}>
+                    Create Account
+                </button>
             </div>
         </LoginLayout>
     );
