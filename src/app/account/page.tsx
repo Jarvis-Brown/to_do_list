@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { LoginLayout } from "@/_component";
 import { useRouter } from "next/navigation";
+import { postProfile } from "@/server/profile";
 
 const Login = () => {
     const router = useRouter();
@@ -17,8 +18,9 @@ const Login = () => {
     const [password, setPassword] = useState("");
 
     function test() {
+        postProfile(firstName, lastName, email, userName, password);
         console.log(firstName, lastName, email, userName, password);
-        router.push("/");
+        // router.push("/");
     }
 
     return (
