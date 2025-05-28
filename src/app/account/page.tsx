@@ -16,11 +16,20 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [message, setMessage] = useState(false);
 
     function test() {
-        postProfile(firstName, lastName, email, userName, password);
         console.log(firstName, lastName, email, userName, password);
-        // router.push("/");
+
+        if (!!firstName || !!lastName || !!email || !!userName || !!password) {
+            // double explanation marks makes a falsey a truthy. using only 1 makes it the opposite. using 2 reverts it
+            setMessage(false);
+
+            postProfile(firstName, lastName, email, userName, password);
+            router.push("/");
+        } else {
+            setMessage(true);
+        }
     }
 
     return (
@@ -80,6 +89,12 @@ const Login = () => {
                         required
                     />
                 </div>
+
+                {!message && (
+                    <div>
+                        <p>Missing inputs field</p>
+                    </div>
+                )}
 
                 <button onClick={test} className={styles.btn}>
                     Create Account
