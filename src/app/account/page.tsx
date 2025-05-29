@@ -2,7 +2,7 @@
 
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { LoginLayout } from "@/_component";
@@ -21,16 +21,24 @@ const Login = () => {
     function test() {
         console.log(firstName, lastName, email, userName, password);
 
-        if (!!firstName || !!lastName || !!email || !!userName || !!password) {
+        if (!!firstName && !!lastName && !!email && !!userName && !!password) {
             // double explanation marks makes a falsey a truthy. using only 1 makes it the opposite. using 2 reverts it
-            setMessage(false);
 
             postProfile(firstName, lastName, email, userName, password);
-            router.push("/");
+            router.push("/home_page");
         } else {
             setMessage(true);
         }
     }
+
+    useEffect(() => {
+        if (!!firstName && !!lastName && !!email && !!userName && !!password) {
+            // double explanation marks makes a falsey a truthy. using only 1 makes it the opposite. using 2 reverts it
+            setMessage(false);
+        }
+
+        console.log("im working");
+    });
 
     return (
         <LoginLayout is_backButton={true}>
@@ -90,7 +98,7 @@ const Login = () => {
                     />
                 </div>
 
-                {!message && (
+                {message && (
                     <div>
                         <p>Missing inputs field</p>
                     </div>
