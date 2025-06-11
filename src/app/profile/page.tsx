@@ -4,17 +4,25 @@ import React from "react";
 import { HomeLayout } from "@/_component";
 import Link from "next/link";
 import styles from "@/_styles/profile.module.css";
+import { VisuallyHiddenInput } from "@/_styles/custom";
 
 const page = () => {
     return (
         <HomeLayout>
             <div className={styles.profile_pic}></div>
             <div className={styles.btn_container}>
+                {" "}
+                // this needs to be its own component
                 <button>
-                    <input type="file" />
                     Add Photo
+                    <VisuallyHiddenInput
+                        type="file"
+                        accept=".jpg, .jpeg, .png, .webp"
+                        onChange={(e: any) => handle_image(e)}
+                        multiple={false}
+                    />
                 </button>
-
+                ;
                 <Link href="/home_page">
                     <button>Cancel</button>
                 </Link>
@@ -22,5 +30,9 @@ const page = () => {
         </HomeLayout>
     );
 };
+
+function handle_image(events: any) {
+    console.log(events);
+}
 
 export default page;
