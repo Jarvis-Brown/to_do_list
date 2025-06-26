@@ -9,8 +9,12 @@ import { updateProfileImage } from "@/firebase/storage";
 export const ProfileButtons = () => {
     const fileInputRef = useRef<HTMLInputElement>(null);
 
-    function handle_image(events: any) {
-        console.log(events);
+    async function handle_image(event: any) {
+        const getImage = await updateProfileImage(
+            crypto.randomUUID(),
+            event.target.files[0]
+        );
+        console.log(event, getImage);
     }
 
     function handleButtonClick() {
@@ -26,7 +30,7 @@ export const ProfileButtons = () => {
             <VisuallyHiddenInput
                 ref={fileInputRef}
                 type="file"
-                onChange={handle_image}
+                onChange={(event: any) => handle_image(event)}
                 multiple={false}
             />
             <Link href="/home_page">
