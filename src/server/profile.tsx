@@ -4,12 +4,14 @@
 
 import { database } from "../firebase/firebase";
 
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc, collection } from "firebase/firestore";
+
+import { profileModel } from "@/models";
 
 // This is a next.js server action, which is an alpha feature, so
 // use with caution.
 // https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions
-export async function postProfile(
+export async function createProfile(
     first_name: string, // this is typescript, we are telling it what type of argument it is by stating its a string (typescript may underline things if you don't tell t what type it is)
     last_name: string,
     email: string,
@@ -31,4 +33,19 @@ function getAuthenticatedAppForUser():
     | { app: any }
     | PromiseLike<{ app: any }> {
     throw new Error("Function not implemented.");
+}
+
+export async function updateProfile(profile: profileModel) {
+    return new Promise(async (res, rej) => {
+        try {
+            if (!profile?.id) {
+            }
+            const profileDoc = doc(collection(database, "test"), profile.id);
+            await updateDoc(profileDoc, { ...profile });
+            res(true);
+        } catch (e) {
+            console.error(e);
+            res(false);
+        }
+    });
 }

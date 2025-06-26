@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { LoginLayout } from "@/_component";
 import { useRouter } from "next/navigation";
-import { postProfile } from "@/server/profile";
+import { createProfile } from "@/server/profile";
 
 const Login = () => {
     const router = useRouter();
@@ -24,7 +24,7 @@ const Login = () => {
         if (!!firstName && !!lastName && !!email && !!userName && !!password) {
             // double explanation marks makes a falsey a truthy. using only 1 makes it the opposite. using 2 reverts it
 
-            postProfile(firstName, lastName, email, userName, password);
+            createProfile(firstName, lastName, email, userName, password);
             router.push("/home_page");
         } else {
             setMessage(true);
