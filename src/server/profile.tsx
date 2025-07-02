@@ -4,7 +4,15 @@
 
 import { database } from "../firebase/firebase";
 
-import { doc, setDoc, updateDoc, collection } from "firebase/firestore";
+import {
+    doc,
+    setDoc,
+    updateDoc,
+    getDocs,
+    query,
+    where,
+    collection,
+} from "firebase/firestore";
 
 import { profileModel } from "@/models";
 
@@ -36,16 +44,37 @@ function getAuthenticatedAppForUser():
 }
 
 export async function updateProfile(profile: profileModel) {
-    return new Promise(async (res, rej) => {
+    return new Promise(async (resolve, reject) => {
         try {
             if (!profile?.id) {
             }
             const profileDoc = doc(collection(database, "test"), profile.id);
             await updateDoc(profileDoc, { ...profile });
-            res(true);
+            resolve(true);
         } catch (e) {
             console.error(e);
-            res(false);
+            resolve(false);
         }
     });
 }
+
+export const get_login = async (login: profileModel): Promise<profileModel> => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const doc = collection(database, "test");
+            const _query = query(
+                doc,
+                where("username", "==", login.username),
+                where("password", "==", login.password)
+            );
+            const querySnapshot = await getDocs(_query);
+            let items = {} as profileModel;
+            querySnapshot.forEach((item) => {
+                items = item.data() as profileModel;
+            });
+            resolve(items);
+        } catch (e) {
+            console.error(e);
+        }
+    });
+};

@@ -5,8 +5,12 @@ import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { LoginLayout } from "@/_component";
 import Link from "next/link";
+import { get_login } from "@/server/profile";
 
 const Login = () => {
+    const check_login = () => {
+        get_login;
+    };
     return (
         <LoginLayout is_backButton={true}>
             <div className={styles.textbox}>
