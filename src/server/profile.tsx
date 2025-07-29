@@ -58,14 +58,17 @@ export async function updateProfile(profile: profileModel) {
     });
 }
 
-export const get_login = async (login: profileModel): Promise<profileModel> => {
+export const get_login = async (
+    username: string,
+    password: string
+): Promise<profileModel> => {
     return new Promise(async (resolve, reject) => {
         try {
             const doc = collection(database, "test");
             const _query = query(
                 doc,
-                where("username", "==", login.username),
-                where("password", "==", login.password)
+                where("username", "==", username),
+                where("password", "==", password)
             );
             const querySnapshot = await getDocs(_query);
             let items = {} as profileModel;
