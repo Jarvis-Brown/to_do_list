@@ -8,6 +8,12 @@
     display: flex;
     justify-content: center;
     margin: 53px auto 90px;
+    overflow: hidden;
+}
+
+.profile_pic_img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .btn_container {

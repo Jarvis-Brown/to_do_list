@@ -4,14 +4,20 @@ import TextField from "@mui/material/TextField";
 import styles from "@/_styles/login.module.css";
 import { get_login } from "@/server/profile";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const LoginInput: React.FC = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
 
     const check_login = async () => {
         const isValid_Login = await get_login(username, password);
         console.log(isValid_Login);
+        if (Object.keys(isValid_Login).length) {
+            localStorage.setItem("profile", JSON.stringify(isValid_Login));
+            router.push("/home_page");
+        }
     };
 
     return (

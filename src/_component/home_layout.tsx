@@ -20,7 +20,13 @@ export const HomeLayout: React.FC<homeLayoutModel> = ({ children }) => {
     return (
         <div className={styles.aside_main}>
             <aside className={styles.aside}>
-                <div className={styles.profile_pic}></div>
+                <div className={styles.profile_pic}>
+                    <img
+                        src="
+https://firebasestorage.googleapis.com/v0/b/taskly-dcb7e.firebasestorage.app/o/image%2F1730723f-4a58-4828-8b6d-9c0c688020f8%2FIMG_0836.jpg?alt=media&token=7bd1902c-443d-428c-a779-ed2dde707833"
+                        alt="profile image"
+                    />
+                </div>
                 <div className={styles.user_name}>User Name</div>
                 <Search />
                 <div className={styles.divider}></div>
