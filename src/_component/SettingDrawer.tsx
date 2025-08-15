@@ -12,12 +12,22 @@ import styles from "@/_styles/home_layout.module.css";
 
 import Link from "next/link";
 
+import { useRouter } from "next/navigation";
+
 export const SettingDrawer = () => {
+    const router = useRouter();
+
+    const signOut = () => {
+        localStorage.clear();
+        router.push("/");
+    };
+
     const [open, setOpen] = useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
     };
+
     return (
         <div className={styles.setting_container}>
             <Settings onClick={toggleDrawer(true)} sx={{ fontSize: 35 }} />
@@ -36,7 +46,7 @@ export const SettingDrawer = () => {
                         </div>
 
                         <div className={styles.sign_out_button}>
-                            <button>Sign Out</button>
+                            <button onClick={signOut}>Sign Out</button>
                         </div>
                     </div>
                 </div>
