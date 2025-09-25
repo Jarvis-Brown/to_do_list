@@ -1,5 +1,7 @@
 // HOME LAYOUT //
 
+"use client";
+
 import { Star, Done, Settings, CalendarToday } from "@mui/icons-material";
 
 import { Search } from "./search";
@@ -10,7 +12,7 @@ import Switch from "@mui/material/Switch";
 
 import { SettingDrawer } from "./SettingDrawer";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { workAsyncStorage } from "next/dist/server/app-render/entry-base";
 
 interface homeLayoutModel {
@@ -18,6 +20,13 @@ interface homeLayoutModel {
 }
 
 export const HomeLayout: React.FC<homeLayoutModel> = ({ children }) => {
+    const [username, setProfileImg] = useState("");
+    useEffect(() => {
+        const getProfile = JSON.parse(
+            localStorage.getItem("profile") as string
+        );
+        setProfileImg(getProfile);
+    }, []);
     return (
         <div className={styles.aside_main}>
             <aside className={styles.aside}>
